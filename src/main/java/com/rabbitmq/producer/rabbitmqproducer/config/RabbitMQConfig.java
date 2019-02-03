@@ -1,7 +1,7 @@
-package com.rabbitmq.sender.rabbitmqsender.config;
+package com.rabbitmq.producer.rabbitmqproducer.config;
 
-import com.rabbitmq.sender.rabbitmqsender.common.SendConfirmCallBack;
-import com.rabbitmq.sender.rabbitmqsender.common.SendReturnCallBack;
+import com.rabbitmq.producer.rabbitmqproducer.common.ProducerReturnCallBack;
+import com.rabbitmq.producer.rabbitmqproducer.common.ProducerConfirmCallBack;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
@@ -19,11 +19,11 @@ public class RabbitMQConfig {
     private ConnectionFactory connectionFactory;
 
     @Autowired
-    private SendReturnCallBack sendReturnCallBack;
+    private ProducerReturnCallBack producerReturnCallBack;
 
 
     @Autowired
-    private SendConfirmCallBack sendConfirmCallBack;
+    private ProducerConfirmCallBack producerConfirmCallBack;
 
     @Bean
     public MessageConverter messageConverter() {
@@ -35,7 +35,7 @@ public class RabbitMQConfig {
     public RabbitTemplate rabbitTemplate() {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMessageConverter(messageConverter());
-        rabbitTemplate.setConfirmCallback(sendConfirmCallBack);
+        rabbitTemplate.setConfirmCallback(producerConfirmCallBack);
         // 实现消息 [rabbitTemplate.send(message); ]时设置ReturnCallback
         // rabbitTemplate.setReturnCallback(sendReturnCallBack);
         return rabbitTemplate;

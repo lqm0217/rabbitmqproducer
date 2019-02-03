@@ -1,4 +1,4 @@
-package com.rabbitmq.sender.rabbitmqsender.domain;
+package com.rabbitmq.producer.rabbitmqproducer.domain;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;

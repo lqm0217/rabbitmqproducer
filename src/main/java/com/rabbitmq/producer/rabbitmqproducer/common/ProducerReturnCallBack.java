@@ -1,4 +1,4 @@
-package com.rabbitmq.sender.rabbitmqsender.common;
+package com.rabbitmq.producer.rabbitmqproducer.common;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class SendReturnCallBack implements RabbitTemplate.ReturnCallback {
+public class ProducerReturnCallBack implements RabbitTemplate.ReturnCallback {
 
     @Override
     public void returnedMessage(Message message, int replyCode, String replyText, String exchange, String routingKey) {

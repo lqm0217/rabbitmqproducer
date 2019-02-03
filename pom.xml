@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.rabbitmq</groupId>
-    <artifactId>sender</artifactId>
+    <artifactId>producer</artifactId>
     <version>1.0.0</version>
-    <name>rabbitmqsender</name>
+    <name>rabbitmqproducer</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -36,6 +36,21 @@
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+            <version>1.2.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

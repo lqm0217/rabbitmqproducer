@@ -9,5 +9,4 @@
 /.mvn/
 /mvnw
 /mvnw.cmd
-/rabbitmqsender.iml
-/sender.iml
+/producer.iml

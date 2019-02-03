@@ -1,4 +1,4 @@
-package com.rabbitmq.sender.rabbitmqsender.config;
+package com.rabbitmq.producer.rabbitmqproducer.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +21,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.rabbitmq.sender.rabbitmqsender.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.rabbitmq.producer.rabbitmqproducer.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
